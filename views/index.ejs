@@ -1,0 +1,35 @@
+<%- include('partials/header') -%> 
+
+    <div class="text-center" id="header">
+        <h1 class="display-3 pt-4 pb-3">Welcome to your Daily Quote!</h1>
+        <h4 class="pb-4 lead">Where you will find motivation to get through the day with text and epic bikes.</h4>
+        <p class="lead">Today is:</p>
+        <p class="date lead pb-4"><%=dayOfWeek%><br>
+        <%=today%></p>
+    </div>
+    <div class="text-center" id="body">
+        <% data.Items.forEach(function(quote, author) { %>
+            
+            <p class="pt-3 pb-3 lead"><em><%=quote.quote%> - <%=quote.author%></em></p>
+
+            <% }) %>
+        <img class="pb-5" src="https://source.unsplash.com/VfUN94cUy4o/";>
+    </div>
+    <div class="pt-3 pb-3 text-center" id="footer">
+        <p>Wanna help contribute?  Have a personal favorite quote?  Feel free to add it to our list below!</p>
+        <form>
+            <div class="form-row justify-content-center pb-5" action="/quote" method="POST">
+                <div class="col-5">
+                    <input class="form-control" type="text" name="quote[quote]" placeholder="Enter quote">
+                </div>
+                <div class="col-2">
+                    <input class="form-control" type="text" name="quote[author]" placeholder="Enter author">
+                </div>
+                <div class="col-1">
+                    <input class="btn btn-outline-info orm-control" type="submit">
+                </div>
+            </div>
+        </form>
+    </div>  
+    
+<%- include('partials/footer') -%> 
