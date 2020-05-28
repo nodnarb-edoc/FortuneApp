@@ -91,7 +91,7 @@ app.post("/you-got-this", (req, res) => {
         } else {
             console.log(`Added quote_id: ${postQuoteID}`);
             ids.push(postQuoteID);
-            res.redirect("/quote");
+            res.redirect("/you-got-this");
             console.log(ids);
         }
     });
