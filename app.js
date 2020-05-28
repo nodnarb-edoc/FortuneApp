@@ -69,7 +69,7 @@ app.get("/you-got-this", (req, res) => {
 
 // CREATE ROUTE
 
-app.post("/you-got-this", (req, res) => {
+app.post("/", (req, res) => {
     var table = "MotivationalQuotes"
     var postQuoteID = uuidv4();
     var postQuote = req.body.quote.quote;
@@ -90,9 +90,7 @@ app.post("/you-got-this", (req, res) => {
             console.error("Unable to add item. Error JSON:", JSON.stringify(err, null, 2));
         } else {
             console.log(`Added quote_id: ${postQuoteID}`);
-            ids.push(postQuoteID);
             res.redirect("/you-got-this");
-            console.log(ids);
         }
     });
 })
