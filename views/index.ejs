@@ -1,21 +1,11 @@
 <%- include('partials/header') -%> 
 
     <div class="text-center" id="header">
-        <h1 class="display-3 pt-4 pb-3">Welcome to your Daily Quote!</h1>
+        <h1 class="display-3 pt-4">Welcome to your Daily Quote!</h1>
         <h4 class="pb-4 lead">Where you will find motivation to get through the day with text and epic bikes.</h4>
         <p class="lead">Today is:</p>
         <p class="date lead pb-4"><%=dayOfWeek%><br>
         <%=today%></p>
-    </div>
-    <div class="text-center" id="body">
-        <% data.Items.forEach(function(quote, author) { %>
-            
-            <p class="pt-3 pb-3 lead"><em><%=quote.quote%> - <%=quote.author%></em></p>
-
-            <% }) %>
-        <img class="pb-5 shrink" src="https://fortuneappbikequotes-media.s3.amazonaws.com/letsridebikes.jpg";>
-    </div>
-    <div class="pt-3 pb-3 text-center" id="footer">
         <p>Wanna help contribute?  Have a personal favorite quote?  Feel free to add it to our list below!</p>
         <form action="/" method="POST">
             <div class="form-row justify-content-center pb-5">
@@ -31,5 +21,14 @@
             </div>
         </form>
     </div>  
+    <div class="text-center" id="body">
+        <% data.Items.forEach(function(quote, author) { %>
+            
+            <p class="pt-3 pb-3 lead"><em><%=quote.quote%> - <%=quote.author%></em></p>
+
+            <% }) %>
+        <img class="pb-5 shrink" src="https://fortuneappbikequotes-media.s3.amazonaws.com/letsridebikes.jpg";>
+    </div>
+    
     
 <%- include('partials/footer') -%> 
