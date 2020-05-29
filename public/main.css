@@ -19,3 +19,7 @@ body {
 .date {
     font-family: 'Source Code Pro', monospace;
 }
+
+.shrink {
+    width: 75%;
+}
