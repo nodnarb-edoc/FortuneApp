@@ -66,6 +66,9 @@ app.get("/you-got-this", (req, res) => {
     });
 });
 
+app.get("/mybike", (req, res) => {
+    res.render("mybike")
+});
 
 // CREATE ROUTE
 
